@@ -1,0 +1,26 @@
+
+.value-statements {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.value-box h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.value-box p {
+  font-size: 1rem;
+  color: #555;
+}

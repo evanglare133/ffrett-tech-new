@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>關於我們 - FFRETT TECH</title>
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== Base / Vars ====== */
+    :root{
+      --primary-green:#2ECC71;
+      --primary-dark:#27AE60;
+      --accent-blue:#3498DB;
+      --accent-orange:#F39C12;
+
+      --white:#fff;
+      --light-gray:#F8F9FA;
+      --medium-gray:#6C757D;
+      --dark-gray:#343A40;
+      --black:#1A1A1A;
+
+      --font-primary:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --font-secondary:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+
+      --container-max-width:1200px;
+      --section-padding:80px 0;
+      --border-radius:12px;
+      --border-radius-small:6px;
+
+      --shadow-light:0 2px 8px rgba(0,0,0,.1);
+      --shadow-medium:0 4px 20px rgba(0,0,0,.15);
+
+      --transition-fast:.2s ease;
+      --transition-medium:.3s ease;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:var(--font-primary);
+      color:var(--dark-gray);
+      line-height:1.6;
+      background:var(--white);
+      font-size:16px;
+    }
+    img{max-width:100%;display:block;}
+
+    .container{
+      max-width:var(--container-max-width);
+      margin:0 auto;
+      padding:0 20px;
+    }
+    .text-center{text-align:center;}
+
+    /* ====== Header / Nav ====== */
+    header{
+      position:fixed;top:0;left:0;right:0;
+      background:#000;color:#fff;z-index:1000;
+      transition:all var(--transition-medium);
+    }
+    nav.container{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:15px 20px;
+    }
+    .logo{display:flex;align-items:center;text-decoration:none;transition:transform .2s;}
+    .logo:hover{transform:translateY(-2px);}
+    .logo-image{height:40px;width:auto;}
+
+    .nav-links{display:flex;list-style:none;gap:32px;align-items:center;}
+    .nav-links a{
+      color:#fff;text-decoration:none;font-weight:500;font-size:15px;
+      position:relative;padding:8px 0;transition:color var(--transition-fast);
+    }
+    .nav-links a:hover{color:var(--accent-blue);}
+    .nav-links a::after{
+      content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+      background:var(--accent-blue);transition:width var(--transition-medium);
+    }
+    .nav-links a:hover::after{width:100%;}
+    .cta-nav{
+      background:var(--accent-blue)!important;color:#fff!important;
+      padding:12px 24px!important;border-radius:var(--border-radius-small);
+      font-weight:600;box-shadow:var(--shadow-light);
+    }
+    .cta-nav::after{display:none!important;}
+    .cta-nav:hover{background:#2980b9!important;transform:translateY(-2px);box-shadow:var(--shadow-medium);}
+
+    /* Hamburger */
+    .nav-toggle{
+      display:none;flex-direction:column;gap:6px;width:32px;height:24px;
+      background:none;border:0;cursor:pointer;z-index:1100;
+    }
+    .nav-toggle span{
+      display:block;width:100%;height:3px;background:#fff;
+      transition:transform .25s,opacity .25s;
+    }
+    .nav-toggle.active span:nth-child(1){transform:translateY(9px) rotate(45deg);}
+    .nav-toggle.active span:nth-child(2){opacity:0;}
+    .nav-toggle.active span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
+
+    /* ====== Main spacing ====== */
+    
+
+    /* ====== Hero ====== */
+    .hero-about{
+      background:linear-gradient(135deg,var(--primary-green) 0%,var(--accent-blue) 100%);
+      color:#fff;text-align:center;padding:120px 0 90px;
+    }
+    .hero-about h1{
+      font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;margin-bottom:20px;
+    }
+    .hero-about p{
+      max-width:720px;margin:0 auto 14px;font-size:clamp(1.05rem,2.4vw,1.25rem);
+      opacity:.95;
+    }
+
+    /* ====== Sections ====== */
+    section{padding:var(--section-padding);}
+    .content-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+    }
+    .text-content h2{
+      font-size:2.4rem;font-weight:700;color:var(--dark-gray);margin-bottom:24px;
+    }
+    .text-content p{
+      font-size:18px;line-height:1.8;margin-bottom:18px;color:var(--medium-gray);
+    }
+    .highlight-3{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:32px;margin-top:50px;
+    }
+    .h-card{
+      background:var(--light-gray);padding:32px 28px;border-radius:var(--border-radius);
+      text-align:center;box-shadow:var(--shadow-light);transition:transform .25s,box-shadow .25s;
+    }
+    .h-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-medium);}
+    .h-card h3{font-size:20px;margin-bottom:10px;color:var(--dark-gray);}
+    .h-card p{color:var(--medium-gray);font-size:15.5px;}
+
+    /* Values / Team reuse from previous page */
+    .values{background:var(--light-gray);}
+    .values h2,.team h2{font-size:2.4rem;margin-bottom:60px;font-weight:700;color:var(--dark-gray);}
+    .values-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:40px;
+    }
+    .value-card{
+      background:#fff;padding:40px;border-radius:var(--border-radius);
+      text-align:center;box-shadow:var(--shadow-light);transition:all var(--transition-medium);
+    }
+    .value-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-medium);}
+    .value-icon{font-size:48px;margin-bottom:20px;display:block;}
+    .value-card h3{font-size:22px;margin-bottom:14px;font-weight:600;color:var(--dark-gray);}
+    .value-card p{color:var(--medium-gray);}
+
+    .team{background:var(--light-gray);}
+    .team-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+    }
+    .team-member{
+      background:#fff;padding:40px;border-radius:var(--border-radius);
+      text-align:center;box-shadow:var(--shadow-light);transition:all var(--transition-medium);
+    }
+    .team-member:hover{transform:translateY(-5px);box-shadow:var(--shadow-medium);}
+    .member-photo{
+      width:120px;height:120px;border-radius:50%;background:var(--light-gray);
+      margin:0 auto 20px;display:flex;align-items:center;justify-content:center;
+      color:var(--medium-gray);font-size:14px;
+    }
+    .member-title{color:var(--primary-green);margin-bottom:15px;font-weight:500;}
+
+    /* CTA */
+    .cta-block{
+      background:linear-gradient(135deg,var(--accent-blue) 0%,var(--primary-green) 100%);
+      color:#fff;padding:80px 0;text-align:center;
+    }
+    .cta-block h2{margin-bottom:12px;}
+
+    /* Footer (same as index) */
+    footer{
+      background:linear-gradient(135deg,#1A1A1A 0%,#2C3E50 100%);
+      color:#fff;padding:60px 0 30px;position:relative;overflow:hidden;
+    }
+    footer::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,var(--accent-blue),transparent);
+    }
+    .footer-content{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;margin-bottom:40px;
+    }
+    .footer-section h4{font-size:20px;font-weight:700;margin-bottom:20px;}
+    .footer-section p,.footer-section a{
+      font-size:15px;line-height:1.6;color:rgba(255,255,255,.8);text-decoration:none;transition:color .2s;
+    }
+    .footer-section a:hover{color:var(--accent-blue);}
+    .footer-links{list-style:none;padding:0;}
+    .footer-links li{margin-bottom:10px;}
+    .footer-links a{display:flex;gap:10px;padding:5px 0;}
+    .footer-links a:hover{padding-left:5px;}
+    .footer-social{display:flex;gap:15px;margin-top:20px;}
+    .social-link{
+      display:inline-flex;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;
+      color:#fff;background:#2b2b2b;transition:opacity .2s,transform .15s;
+    }
+    .social-link:hover{opacity:.8;transform:translateY(-2px);}
+    .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,.1);}
+    .footer-bottom p{font-size:14px;color:rgba(255,255,255,.6);}
+
+    /* ====== Responsive ====== */
+    @media (max-width:768px){
+      .nav-links{display:none;}
+      .nav-toggle{display:flex;}
+
+      nav.container{
+        flex-direction:row !important;align-items:center !important;justify-content:space-between !important;
+        gap:0 !important;padding:12px 16px !important;
+      }
+      #primary-nav.open{
+        display:flex !important;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+        background:#000;padding:20px;gap:15px;
+      }
+
+      .content-grid{grid-template-columns:1fr;gap:40px;}
+      .values-grid{grid-template-columns:1fr;gap:30px;}
+      .team-grid{grid-template-columns:1fr;}
+      .footer-content{text-align:center;grid-template-columns:1fr;gap:30px;}
+      section{padding:60px 0;}
+      .hero-about{padding:100px 0 70px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.webp" alt="FFRETT TECH Logo" class="logo-image" style="width:200px;height:auto;" />
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="services.html">服務項目</a></li>
+        <li><a href="process.html">流程說明</a></li>
+        <li><a href="testimonials.html">儲能實績</a></li>
+        <li><a href="contact.html" class="cta-nav">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-about">
+      <div class="container">
+        <h1>富瑞特科技有限公司</h1>
+        <p>從家中到海上，我們的儲能系統提供潔淨電力、降低電費，實現真正的電力自主。</p>
+        <p>We don't just build batteries—we create the future of clean, connected living.</p>
+      </div>
+    </section>
+
+    <!-- Who we are -->
+    <section id="who-we-are">
+      <div class="container">
+        <div class="content-grid">
+          <div class="text-content">
+            <h2>關於我們 / About Us</h2>
+            <p>
+              我們專注於家庭與電動船艇的智慧電池系統設計與製造，致力於打造穩定、潔淨且未來導向的能源解決方案。從家中到海上，全面實現電力自主。
+            </p>
+            <p>
+              We are a team of innovators and energy specialists driven to reshape the future of clean power. Our mission is simple: disrupt the traditional energy landscape by delivering cutting‑edge home battery storage systems and extending that same intelligent power to the water with advanced electric boat solutions.
+            </p>
+            <p>
+              From modern homes to marine mobility, we design and manufacture reliable, sustainable energy systems that empower our customers to live more independently, more efficiently, and with zero compromise on performance or design.
+            </p>
+          </div>
+          <div class="image-content">
+            <!-- Replace with your image -->
+            <img src="assets/about-hero.jpg" alt="FFRETT TECH 團隊/產品" />
+          </div>
+        </div>
+
+        <div class="highlight-3">
+          <div class="h-card">
+            <h3>專業團隊</h3>
+            <p>由專業團隊打造的智慧儲能方案，讓生活更簡單、更綠能。</p>
+          </div>
+          <div class="h-card">
+            <h3>顧客信任與實績</h3>
+            <p>深受客戶信賴，實績驗證的儲能專家。</p>
+          </div>
+          <div class="h-card">
+            <h3>專屬服務</h3>
+            <p>每位客戶都值得擁有貼心且專業的個人化支援。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values (可保留/調整) -->
+    <section class="values">
+      <div class="container">
+        <h2 class="text-center">我們的核心價值</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🌊</div>
+            <h3>海洋保護</h3>
+            <p>推廣零排放船舶技術，守護海洋環境，打造永續海事生態。</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔧</div>
+            <h3>專業品質</h3>
+            <p>深厚的電池系統整合能力與嚴謹品管，確保每個專案皆達頂尖標準。</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">⚡</div>
+            <h3>智慧能源</h3>
+            <p>以客戶需求為導向，量身訂製家用與船舶儲能方案。</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🚢</div>
+            <h3>創新設計</h3>
+            <p>融合美學與功能，打造優雅而高效的電動船舶與儲能系統。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team">
+      <div class="container">
+        <h2 class="text-center">專業團隊</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-photo"><span>創辦人照片</span></div>
+            <h3>技術總監</h3>
+            <p class="member-title">電池系統專家 & 創辦人</p>
+            <p>擁有豐富電池技術與船舶系統經驗，帶領團隊推動能源轉型。</p>
+          </div>
+          <div class="team-member">
+            <div class="member-photo"><span>設計總監照片</span></div>
+            <h3>設計總監</h3>
+            <p class="member-title">產品設計總監</p>
+            <p>專精外觀與結構設計，確保產品兼顧美感與實用性。</p>
+          </div>
+          <div class="team-member">
+            <div class="member-photo"><span>客服經理照片</span></div>
+            <h3>客服經理</h3>
+            <p class="member-title">客戶服務經理</p>
+            <p>以客為本，提供全流程、客製化的貼心支援。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-block">
+      <div class="container">
+        <h2>想更了解我們？</h2>
+        <p>歡迎聯繫我們的團隊，取得專屬的儲能或電動船艇方案建議。</p>
+        <a href="contact.html" class="cta-nav" style="display:inline-block;margin-top:20px;">聯絡我們</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Company Info -->
+        <div class="footer-section">
+          <h4>富瑞特科技有限公司 <br> FFRETT TECH CO LTD</h4>
+          <p>
+            致力於打造清潔能源的未來，提供最先進的家庭與船舶綠能解決方案。
+          </p>
+          <div class="footer-social">
+            <a href="https://instagram.com/ffrett.tech" aria-label="Instagram" class="social-link">
+              <!-- Instagram SVG -->
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm6.25-3.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/></svg>
+            </a>
+            <a href="https://line.me/R/ti/p/@597tpgrj" aria-label="Line" class="social-link">
+              <!-- LINE SVG -->
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.201 2 1.5 6.027 1.5 10.998c0 4.008 3.18 7.42 7.595 8.54.595.16.524.146.6.535l.357 1.873c.08.42.33.517.525.517.137 0 .296-.05.47-.213l2.53-2.39c.145-.137.34-.2.537-.17 4.84.74 8.89-2.42 8.89-8.69C22.5 6.027 17.799 2 12 2zm-3.33 11.39H6.64a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47s.47.21.47.47v3.01h1.56c.26 0 .47.21.47.47s-.21.47-.47.47zm3.77 0h-1.9a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47h1.9c.26 0 .47.21.47.47s-.21.47-.47.47h-1.43v.79h1.43c.26 0 .47.21.47.47s-.21.47-.47.47h-1.43v.8h1.43c.26 0 .47.21.47.47s-.21.47-.47.47zm3.92-.47a.47.47 0 0 1-.94 0v-1.2l-1.32 1.57a.47.47 0 0 1-.83-.3V8.96c0-.26.21-.47.47-.47s.47.21.47.47v1.93l1.32-1.57a.47.47 0 0 1 .83.3v2.57zm2.55.47h-1.67a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47s.47.21.47.47v3.01h1.2c.26 0 .47.21.47.47s-.21.47-.47.47z"/></svg>
+            </a>
+            <a href="mailto:ffrett.tech@gmail.com" aria-label="Email" class="social-link">
+              <!-- Email SVG -->
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm2 0v.01L12 12l8-6.99V5H4zm16 2.24-6.9 4.84L20 17.3V7.24zM4 7.24v10.06l6.9-5.18L4 7.24zM5.7 19h12.6L13 14.9l-1 .75-1-.75L5.7 19z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section">
+          <h4>服務項目</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">🔋 儲能系統</a></li>
+            <li><a href="services.html">🚢 電動船舶</a></li>
+            <li><a href="services.html">💬 線上支援</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h4>快速連結</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="services.html">服務項目</a></li>
+            <li><a href="process.html">流程說明</a></li>
+            <li><a href="testimonials.html">儲能實績</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h4>聯絡方式</h4>
+          <p>
+            地址：高雄市鼓山區龍德路118巷31號1樓<br>
+            電話：+886 07 586 7956<br>
+            官方Line：@597tpgrj<br>
+            電子郵件：ffrett.tech@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 FFRETT TECH. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile nav
+    const btn = document.getElementById('navToggle');
+    const nav = document.getElementById('primary-nav');
+    if(btn && nav){
+      btn.addEventListener('click', ()=>{
+        const open = nav.classList.toggle('open');
+        btn.classList.toggle('active', open);
+        btn.setAttribute('aria-expanded', open);
+      });
+      nav.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+          nav.classList.remove('open');
+          btn.classList.remove('active');
+          btn.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+
+    // Mark active nav
+    const current = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link=>{
+      if(link.getAttribute('href')===current){
+        link.style.color='#3498DB';link.style.fontWeight='600';
+      }
+    });
+  });
+  </script>
+</body>
+</html>

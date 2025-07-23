@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>聯絡我們 - FFRETT TECH</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <!-- Header injection -->
+  <header id="header">
+    <nav class="container">
+      <ul class="nav-links">
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="services.html">服務項目</a></li>
+        <li><a href="process.html">流程說明</a></li>
+        <li><a href="testimonials.html">用戶回饋</a></li>
+        <li><a href="contact.html" class="cta-nav">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-secondary">
+      <div class="container">
+        <div class="hero-content">
+          <h1>開始您的綠能之旅</h1>
+          <p class="subtitle">免費諮詢，專業評估，讓我們為您規劃最佳方案</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-methods">
+      <div class="container">
+        <div class="contact-intro">
+          <h2>多種聯絡方式，選擇最適合您的</h2>
+          <p>無論您偏好電話、線上表單還是面對面諮詢，我們都提供專業的服務</p>
+        </div>
+        
+        <div class="contact-options">
+          <div class="contact-card priority">
+            <div class="contact-icon">📞</div>
+            <h3>電話諮詢</h3>
+            <p>專業顧問立即為您解答</p>
+            <div class="contact-detail">
+              <strong>0800-123-456</strong>
+              <span>免付費專線</span>
+            </div>
+            <div class="contact-detail">
+              <strong>週一至週六 9:00-18:00</strong>
+              <span>服務時間</span>
+            </div>
+            <button class="btn btn-primary">立即撥打</button>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>LINE諮詢</h3>
+            <p>隨時隨地快速回覆</p>
+            <div class="contact-detail">
+              <strong>@ffrett-tech</strong>
+              <span>LINE ID</span>
+            </div>
+            <div class="contact-detail">
+              <strong>24小時內回覆</strong>
+              <span>回覆時間</span>
+            </div>
+            <button class="btn btn-outline">加入好友</button>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email諮詢</h3>
+            <p>詳細資料完整傳遞</p>
+            <div class="contact-detail">
+              <strong>info@ffrett-tech.com</strong>
+              <span>諮詢信箱</span>
+            </div>
+            <div class="contact-detail">
+              <strong>12小時內回覆</strong>
+              <span>回覆時間</span>
+            </div>
+            <button class="btn btn-outline">發送郵件</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="form-container">
+          <div class="form-header">
+            <h2>線上預約免費評估</h2>
+            <p>填寫以下資料，我們將在24小時內聯絡您安排免費的現場評估</p>
+          </div>
+          
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">姓名 *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">聯絡電話 *</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="city">所在縣市 *</label>
+                <select id="city" name="city" required>
+                  <option value="">請選擇</option>
+                  <option value="台北市">台北市</option>
+                  <option value="新北市">新北市</option>
+                  <option value="桃園市">桃園市</option>
+                  <option value="新竹市">新竹市</option>
+                  <option value="新竹縣">新竹縣</option>
+                  <option value="苗栗縣">苗栗縣</option>
+                  <option value="台中市">台中市</option>
+                  <option value="彰化縣">彰化縣</option>
+                  <option value="南投縣">南投縣</option>
+                  <option value="雲林縣">雲林縣</option>
+                  <option value="嘉義市">嘉義市</option>
+                  <option value="嘉義縣">嘉義縣</option>
+                  <option value="台南市">台南市</option>
+                  <option value="高雄市">高雄市</option>
+                  <option value="屏東縣">屏東縣</option>
+                  <option value="台東縣">台東縣</option>
+                  <option value="花蓮縣">花蓮縣</option>
+                  <option value="宜蘭縣">宜蘭縣</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="house-type">房屋類型</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="radio" name="house-type" value="透天厝">
+                  <span>透天厝</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="radio" name="house-type" value="公寓大樓">
+                  <span>公寓大樓</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="radio" name="house-type" value="農舍">
+                  <span>農舍</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="radio" name="house-type" value="其他">
+                  <span>其他</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="monthly-bill">月均電費</label>
+              <select id="monthly-bill" name="monthly-bill">
+                <option value="">請選擇</option>
+                <option value="1000以下">1,000元以下</option>
+                <option value="1000-2000">1,000-2,000元</option>
+                <option value="2000-3000">2,000-3,000元</option>
+                <option value="3000-5000">3,000-5,000元</option>
+                <option value="5000以上">5,000元以上</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="interests">感興趣的服務</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="interests" value="太陽能系統">
+                  <span>太陽能系統</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="interests" value="儲能系統">
+                  <span>儲能系統</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="interests" value="電力整合">
+                  <span>電力整合</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="interests" value="節能評估">
+                  <span>節能評估</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">其他需求或問題</label>
+              <textarea id="message" name="message" rows="4" placeholder="請描述您的需求或想了解的問題..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="preferred-time">希望聯絡時間</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="radio" name="preferred-time" value="上午">
+                  <span>上午 (9:00-12:00)</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="radio" name="preferred-time" value="下午">
+                  <span>下午 (13:00-17:00)</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="radio" name="preferred-time" value="晚上">
+                  <span>晚上 (18:00-21:00)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label privacy">
+                <input type="checkbox" name="privacy" required>
+                <span>我同意個人資料蒐集與使用政策</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">送出諮詢表單</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="office-info">
+      <div class="container">
+        <div class="office-grid">
+          <div class="office-details">
+            <h2>服務據點</h2>
+            <div class="office-item">
+              <h3>🏢 總公司</h3>
+              <p>地址：台北市信義區綠能路123號8樓</p>
+              <p>電話：(02) 2345-6789</p>
+              <p>服務時間：週一至週五 9:00-18:00</p>
+            </div>
+            <div class="office-item">
+              <h3>🏪 桃園服務中心</h3>
+              <p>地址：桃園市中壢區太陽能街45號</p>
+              <p>電話：(03) 456-7890</p>
+              <p>服務時間：週一至週六 9:00-18:00</p>
+            </div>
+            <div class="office-item">
+              <h3>🏪 台中服務中心</h3>
+              <p>地址：台中市西屯區節能大道67號</p>
+              <p>電話：(04) 567-8901</p>
+              <p>服務時間：週一至週六 9:00-18:00</p>
+            </div>
+          </div>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <span>Google Maps<br>互動地圖</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="text-center">常見問題</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>Q: 現場評估需要付費嗎？</h4>
+            <p>A: 完全免費！我們提供免費的現場評估服務，包含屋頂勘查和初步方案規劃。</p>
+          </div>
+          <div class="faq-item">
+            <h4>Q: 評估後多久可以收到報價？</h4>
+            <p>A: 通常在現場評估後3-5個工作天內會提供詳細的報價和方案說明。</p>
+          </div>
+          <div class="faq-item">
+            <h4>Q: 可以只諮詢不安裝嗎？</h4>
+            <p>A: 當然可以！我們很樂意為您解答關於綠能系統的任何問題，不會有任何壓力。</p>
+          </div>
+          <div class="faq-item">
+            <h4>Q: 服務範圍涵蓋哪些地區？</h4>
+            <p>A: 主要服務範圍為北台灣、桃竹苗、台中地區。其他地區歡迎來電詢問。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer injection -->
+  <footer id="footer">
+    <div class="container">
+      <p>&copy; 2025 FFRETT TECH. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
