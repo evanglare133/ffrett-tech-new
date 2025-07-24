@@ -202,7 +202,7 @@ main {
 
 /* Hero Section */
 .hero-secondary {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: url('assets/services-hero.jpg') center center / cover no-repeat;
   color: white;
   padding: 120px 0 80px;
   position: relative;
@@ -1038,4 +1038,56 @@ button:focus {
     --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.4);
     --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.5);
   }
+}
+
+.certification-badges {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.certification-badges img {
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: transform 0.3s ease;
+}
+
+.certification-badges img:hover {
+  transform: scale(1.05);
+}
+
+.boat-type-selector {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.boat-type-button {
+  border: none;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.boat-type-button:hover {
+  background-color: #e0e0e0;
+}
+
+.boat-type-button.active {
+  background-color: #0a74da;
+  color: white;
+  font-weight: 600;
+  border: 1px solid #0a74da;
 }

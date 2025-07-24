@@ -4,23 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>聯絡我們 - FFRETT TECH</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contact.css" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header injection -->
+  <!-- Header -->
   <header id="header">
     <nav class="container">
-      <ul class="nav-links">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.webp" alt="FFRETT TECH Logo" class="logo-image" style="width:200px;height:auto;" />
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="primary-nav" class="nav-links">
         <li><a href="about.html">關於我們</a></li>
         <li><a href="services.html">服務項目</a></li>
         <li><a href="process.html">流程說明</a></li>
-        <li><a href="testimonials.html">用戶回饋</a></li>
+        <li><a href="testimonials.html">儲能實績</a></li>
         <li><a href="contact.html" class="cta-nav">聯絡我們</a></li>
       </ul>
     </nav>
   </header>
-
+  <div id="nav-backdrop"></div>
   <main>
     <section class="hero-secondary">
       <div class="container">
@@ -34,54 +46,60 @@
     <section class="contact-methods">
       <div class="container">
         <div class="contact-intro">
-          <h2>多種聯絡方式，選擇最適合您的</h2>
-          <p>無論您偏好電話、線上表單還是面對面諮詢，我們都提供專業的服務</p>
+          <h2>聯絡我們</h2>
+          <p>對我們的電池儲能系統或電動船艇方案有任何疑問？歡迎與我們聯繫！無論是報價需求、合作洽談，或是技術支援，我們的團隊都隨時為您提供協助。 現在就聯絡我們，我們期待您的來信！</p>
         </div>
         
         <div class="contact-options">
           <div class="contact-card priority">
-            <div class="contact-icon">📞</div>
+            <img src="assets/phone-logo.png" alt="Phone Icon" class="contact-logo" />
             <h3>電話諮詢</h3>
             <p>專業顧問立即為您解答</p>
             <div class="contact-detail">
-              <strong>0800-123-456</strong>
-              <span>免付費專線</span>
+              <strong>+886 07 586 7956</strong>
+              <span>Phone Number</span>
             </div>
             <div class="contact-detail">
-              <strong>週一至週六 9:00-18:00</strong>
+              <strong>週一 至 週五 9:00-18:00 </strong>
               <span>服務時間</span>
             </div>
             <button class="btn btn-primary">立即撥打</button>
           </div>
 
           <div class="contact-card">
-            <div class="contact-icon">💬</div>
+            <img src="assets/LINE_logo.svg.png" alt="LINE Logo" class="contact-logo" />
             <h3>LINE諮詢</h3>
             <p>隨時隨地快速回覆</p>
+            <div class="qr-wrapper">
+              <img src="assets/line-qr.jpg" alt="LINE QR Code" class="qr-code" />
+            </div>
             <div class="contact-detail">
-              <strong>@ffrett-tech</strong>
+              <strong>@597tpgrj</strong>
               <span>LINE ID</span>
             </div>
             <div class="contact-detail">
-              <strong>24小時內回覆</strong>
+              <strong>12小時內回覆</strong>
               <span>回覆時間</span>
             </div>
             <button class="btn btn-outline">加入好友</button>
           </div>
 
           <div class="contact-card">
-            <div class="contact-icon">📧</div>
+            <img src="assets/email-logo.webp" alt="EMail" class="contact-logo" />
             <h3>Email諮詢</h3>
             <p>詳細資料完整傳遞</p>
             <div class="contact-detail">
-              <strong>info@ffrett-tech.com</strong>
+              <strong>ffrett.tech@gmail.com</strong>
               <span>諮詢信箱</span>
             </div>
             <div class="contact-detail">
-              <strong>12小時內回覆</strong>
+              <strong>24小時內回覆</strong>
               <span>回覆時間</span>
             </div>
-            <button class="btn btn-outline">發送郵件</button>
+            <a href="mailto:ffrett.tech@gmail.com" class="btn btn-outline">
+              <img src="assets/email-logo.webp" alt="Email Icon" class="btn-icon" />
+              發送郵件
+            </a>
           </div>
         </div>
       </div>
@@ -95,7 +113,8 @@
             <p>填寫以下資料，我們將在24小時內聯絡您安排免費的現場評估</p>
           </div>
           
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" onsubmit="sendMail(event)">
+
             <div class="form-row">
               <div class="form-group">
                 <label for="name">姓名 *</label>
@@ -234,31 +253,27 @@
       <div class="container">
         <div class="office-grid">
           <div class="office-details">
-            <h2>服務據點</h2>
+            <h2>公司地址</h2>
             <div class="office-item">
-              <h3>🏢 總公司</h3>
-              <p>地址：台北市信義區綠能路123號8樓</p>
-              <p>電話：(02) 2345-6789</p>
+              <h3>公司地址 Company Address</h3>
+              <p>地址：高雄市鼓山區龍德路118巷31號1樓</p>
+              <p>電話：+886 07 586 7956</p>
               <p>服務時間：週一至週五 9:00-18:00</p>
             </div>
-            <div class="office-item">
-              <h3>🏪 桃園服務中心</h3>
-              <p>地址：桃園市中壢區太陽能街45號</p>
-              <p>電話：(03) 456-7890</p>
-              <p>服務時間：週一至週六 9:00-18:00</p>
-            </div>
-            <div class="office-item">
-              <h3>🏪 台中服務中心</h3>
-              <p>地址：台中市西屯區節能大道67號</p>
-              <p>電話：(04) 567-8901</p>
-              <p>服務時間：週一至週六 9:00-18:00</p>
-            </div>
+            
           </div>
           <div class="map-container">
-            <div class="map-placeholder">
-              <span>Google Maps<br>互動地圖</span>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.4543660149766!2d120.2968719741345!3d22.654818029954143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04ff3b0e1d19%3A0x88ceb0f48975c86e!2s1%2C%20No.%2031%2C%20Lane%20118%2C%20Longde%20Rd%2C%20Gushan%20District%2C%20Kaohsiung%20City%2C%20804!5e1!3m2!1sen!2stw!4v1753335566146!5m2!1sen!2stw"
+              width="100%"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
+
         </div>
       </div>
     </section>
@@ -273,28 +288,214 @@
           </div>
           <div class="faq-item">
             <h4>Q: 評估後多久可以收到報價？</h4>
-            <p>A: 通常在現場評估後3-5個工作天內會提供詳細的報價和方案說明。</p>
+            <p>A: 通常在現場評估後1-5個工作天內會提供詳細的報價和方案說明。</p>
           </div>
           <div class="faq-item">
-            <h4>Q: 可以只諮詢不安裝嗎？</h4>
+            <h4>Q: 若尚未決定安裝，是否也能提供諮詢？</h4>
             <p>A: 當然可以！我們很樂意為您解答關於綠能系統的任何問題，不會有任何壓力。</p>
           </div>
           <div class="faq-item">
             <h4>Q: 服務範圍涵蓋哪些地區？</h4>
-            <p>A: 主要服務範圍為北台灣、桃竹苗、台中地區。其他地區歡迎來電詢問。</p>
+            <p>A: 主要服務範圍為全台灣，總部位於高雄。其他地區歡迎來電詢問。</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer injection -->
+  <!-- Footer -->
   <footer id="footer">
     <div class="container">
-      <p>&copy; 2025 FFRETT TECH. All rights reserved.</p>
+      <div class="footer-content">
+        <!-- Company Info -->
+        <div class="footer-section">
+          <h4>富瑞特科技有限公司 <br> FFRETT TECH CO LTD</h4>
+          <p>
+            致力於打造清潔能源的未來，為台灣提供最先進的綠能解決方案。
+            我們專注於創新技術與永續發展，重新定義現代生活的能源標準。
+          </p>
+          <div class="footer-social">
+            <a href="https://instagram.com/ffrett.tech" aria-label="Instagram" class="social-link">
+              <!-- Instagram -->
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm6.25-3.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/>
+              </svg>
+            </a>
+
+            <a href="https://line.me/R/ti/p/@597tpgrj" aria-label="Line" class="social-link">
+              <!-- LINE -->
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.201 2 1.5 6.027 1.5 10.998c0 4.008 3.18 7.42 7.595 8.54.595.16.524.146.6.535l.357 1.873c.08.42.33.517.525.517.137 0 .296-.05.47-.213l2.53-2.39c.145-.137.34-.2.537-.17 4.84.74 8.89-2.42 8.89-8.69C22.5 6.027 17.799 2 12 2zm-3.33 11.39H6.64a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47s.47.21.47.47v3.01h1.56c.26 0 .47.21.47.47s-.21.47-.47.47zm3.77 0h-1.9a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47h1.9c.26 0 .47.21.47.47s-.21.47-.47.47h-1.43v.79h1.43c.26 0 .47.21.47.47s-.21.47-.47.47h-1.43v.8h1.43c.26 0 .47.21.47.47s-.21.47-.47.47zm3.92-.47a.47.47 0 0 1-.94 0v-1.2l-1.32 1.57a.47.47 0 0 1-.83-.3V8.96c0-.26.21-.47.47-.47s.47.21.47.47v1.93l1.32-1.57a.47.47 0 0 1 .83.3v2.57zm2.55.47h-1.67a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47s.47.21.47.47v3.01h1.2c.26 0 .47.21.47.47s-.21.47-.47.47z"/>
+              </svg>
+            </a>
+
+            <a href="mailto:ffrett.tech@gmail.com" aria-label="Email" class="social-link">
+              <!-- Email -->
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+                <path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm2 0v.01L12 12l8-6.99V5H4zm16 2.24-6.9 4.84L20 17.3V7.24zM4 7.24v10.06l6.9-5.18L4 7.24zM5.7 19h12.6L13 14.9l-1 .75-1-.75L5.7 19z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section">
+          <h4>服務項目</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">🔋 儲能系統</a></li>
+            <li><a href="services.html">🚢 電動船舶</a></li>
+            <li><a href="services.html">💬 線上支援</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h4>快速連結</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="services.html">服務項目</a></li>
+            <li><a href="process.html">流程說明</a></li>
+            <li><a href="testimonials.html">儲能實績</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h4>聯絡方式</h4>
+          <p>
+            地址：高雄市鼓山區龍德路118巷31號1樓<br>
+            電話：+886 07 586 7956 <br>
+            官方Line： @597tpgrj <br>
+            電子郵件：ffrett.tech@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2025 FFRETT TECH. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script>
+    // Mobile navigation toggle - UPDATED
+      document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('primary-nav');
+  const backdrop = document.getElementById('nav-backdrop');
+
+  function closeMenu(){
+    nav.classList.remove('open');
+    btn.classList.remove('active');
+    btn.setAttribute('aria-expanded','false');
+    document.body.classList.remove('nav-open');
+    backdrop.classList.remove('show');
+  }
+
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('nav-open', open);
+    backdrop.classList.toggle('show', open);
+  });
+
+  backdrop.addEventListener('click', closeMenu);
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+});
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic form validation
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const city = document.getElementById('city').value;
+        const privacy = document.querySelector('input[name="privacy"]').checked;
+        
+        if (!name || !phone || !city || !privacy) {
+          alert('請填寫所有必填欄位並同意個人資料使用政策');
+          return;
+        }
+        
+        // Show success message
+        alert('謝謝您的諮詢，我們將在24小時內與您聯絡！');
+        
+        // Reset form
+        contactForm.reset();
+      });
+    }
+
+    // Button actions
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('.btn')) {
+        const buttonText = e.target.textContent;
+        
+        if (buttonText === '立即撥打') {
+          window.location.href = 'tel:+886075867956';
+        } else if (buttonText === '加入好友') {
+          window.open('https://line.me/R/ti/p/@597tpgrj', '_blank');
+        } else if (buttonText === '發送郵件') {
+          window.location.href = 'mailto:ffrett.tech@gmail.com';
+        }
+      }
+    });
+
+    // Animate on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+  <script>
+  function sendMail(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const city = document.getElementById('city').value;
+    const house = document.querySelector('input[name="house-type"]:checked')?.value || '';
+    const bill = document.getElementById('monthly-bill').value;
+    const interests = [...document.querySelectorAll('input[name="interests"]:checked')]
+      .map(cb => cb.value).join(', ');
+    const contactTime = document.querySelector('input[name="preferred-time"]:checked')?.value || '';
+    const message = document.getElementById('message').value;
+
+    const subject = encodeURIComponent(`新諮詢表單 - ${name}`);
+    const body = encodeURIComponent(
+      `姓名: ${name}\n` +
+      `電話: ${phone}\n` +
+      `Email: ${email}\n` +
+      `所在縣市: ${city}\n` +
+      `房屋類型: ${house}\n` +
+      `月均電費: ${bill}\n` +
+      `感興趣的服務: ${interests}\n` +
+      `希望聯絡時間: ${contactTime}\n` +
+      `其他需求或問題:\n${message}`
+    );
+
+    window.location.href = `mailto:ffrett.tech@gmail.com?subject=${subject}&body=${body}`;
+  }
+</script>
+
 </body>
 </html>
