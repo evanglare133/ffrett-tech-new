@@ -32,7 +32,6 @@
       </ul>
     </nav>
   </header>
-  <div id="nav-backdrop"></div>
   <main>
     <section class="hero-secondary">
       <div class="container">
@@ -380,30 +379,61 @@
   </footer>
 
   <script>
-    // Mobile navigation toggle - UPDATED
-      document.addEventListener('DOMContentLoaded', () => {
+  // Mobile navigation toggle - FIXED
+document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('navToggle');
   const nav = document.getElementById('primary-nav');
   const backdrop = document.getElementById('nav-backdrop');
 
-  function closeMenu(){
+  // Ensure elements exist before adding listeners
+  if (!btn || !nav || !backdrop) {
+    console.error('Navigation elements not found');
+    return;
+  }
+
+  function closeMenu() {
     nav.classList.remove('open');
     btn.classList.remove('active');
-    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('nav-open');
     backdrop.classList.remove('show');
   }
 
-  btn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    btn.classList.toggle('active', open);
-    btn.setAttribute('aria-expanded', open);
-    document.body.classList.toggle('nav-open', open);
-    backdrop.classList.toggle('show', open);
+  function openMenu() {
+    nav.classList.add('open');
+    btn.classList.add('active');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+    backdrop.classList.add('show');
+  }
+
+  // Toggle menu on button click
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const isOpen = nav.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
+  // Close menu when backdrop is clicked
   backdrop.addEventListener('click', closeMenu);
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Close menu when nav links are clicked
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      closeMenu();
+    }
+  });
 });
 
     // Form submission
@@ -496,6 +526,23 @@
     window.location.href = `mailto:ffrett.tech@gmail.com?subject=${subject}&body=${body}`;
   }
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('primary-nav');
 
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', open);
+  });
+
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    btn.classList.remove('active');
+    btn.setAttribute('aria-expanded','false');
+  }));
+});
+</script>
 </body>
 </html>

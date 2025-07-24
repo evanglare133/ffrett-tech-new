@@ -133,3 +133,13 @@ main{padding-top:70px;} /* fixed header offset */
   .process-step{padding:20px 15px;}
   .step-number{width:70px;height:70px;font-size:1.3rem;}
 }
+
+@media (max-width: 768px) {
+  .nav-links.open {
+    
+    display:flex !important;flex-direction:column;position:absolute;
+        top:100%;left:0;right:0;background:rgba(0,0,0,0.98);
+        backdrop-filter:blur(20px);padding:30px;gap:20px;
+        border-top:1px solid rgba(255,255,255,0.1);
+  }
+}
