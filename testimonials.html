@@ -19,7 +19,7 @@
         <img src="assets/logo.webp" alt="FFRETT TECH Logo" class="logo-image" style="width:200px;height:auto;" />
       </a>
 
-      <button class="nav-toggle" id="nav‑toggle" aria-label="Menu" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
@@ -31,7 +31,6 @@
         <li><a href="contact.html" class="cta-nav">聯絡我們</a></li>
       </ul>
     </nav>
-    <div id="nav‑backdrop"></div>
   </header>
 
   <main>
@@ -185,9 +184,8 @@
             </a>
 
             <a href="https://line.me/R/ti/p/@597tpgrj" aria-label="Line" class="social-link">
-              <!-- LINE -->
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2C6.201 2 1.5 6.027 1.5 10.998c0 4.008 3.18 7.42 7.595 8.54.595.16.524.146.6.535l.357 1.873c.08.42.33.517.525.517.137 0 .296-.05.47-.213l2.53-2.39c.145-.137.34-.2.537-.17 4.84.74 8.89-2.42 8.89-8.69C22.5 6.027 17.799 2 12 2zm-3.33 11.39H6.64a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47s.47.21.47.47v3.01h1.56c.26 0 .47.21.47.47s-.21.47-.47.47zm3.77 0h-1.9a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47h1.9c.26 0 .47.21.47.47s-.21.47-.47.47h-1.43v.79h1.43c.26 0 .47.21.47.47s-.21.47-.47.47h-1.43v.8h1.43c.26 0 .47.21.47.47s-.21.47-.47.47zm3.92-.47a.47.47 0 0 1-.94 0v-1.2l-1.32 1.57a.47.47 0 0 1-.83-.3V8.96c0-.26.21-.47.47-.47s.47.21.47.47v1.93l1.32-1.57a.47.47 0 0 1 .83.3v2.57zm2.55.47h-1.67a.47.47 0 0 1-.47-.47V8.96c0-.26.21-.47.47-.47s.47.21.47.47v3.01h1.2c.26 0 .47.21.47.47s-.21.47-.47.47z"/>
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="#00C300" aria-hidden="true">
+                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.631-.63.345 0 .627.285.627.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.628-.629.628M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
               </svg>
             </a>
 
@@ -206,7 +204,7 @@
           <ul class="footer-links">
             <li><a href="services.html">🔋 儲能系統</a></li>
             <li><a href="services.html">🚢 電動船舶</a></li>
-            <li><a href="services.html">💬 線上支援</a></li>
+            <li><a href="contact.html">💬 線上支援</a></li>
           </ul>
         </div>
 
@@ -223,13 +221,14 @@
         </div>
 
         <!-- Contact Info -->
+       <!-- Contact Info -->
         <div class="footer-section">
           <h4>聯絡方式</h4>
           <p>
             地址：高雄市鼓山區龍德路118巷31號1樓<br>
-            電話：+886 07 586 7956 <br>
-            官方Line： @597tpgrj <br>
-            電子郵件：ffrett.tech@gmail.com
+            電話：<a href="tel:+886075867956" class="phone-link">+886 07 586 7956</a> <br>
+            官方Line： <a href="https://line.me/R/ti/p/@597tpgrj" target="_blank" class="line-link">@597tpgrj</a> <br>
+            電子郵件：<a href="mailto:ffrett.tech@gmail.com" class="email-link">ffrett.tech@gmail.com</a>
           </p>
         </div>
       </div>
@@ -271,64 +270,32 @@
       });
     });
   </script>
-  <script>
-  // Mobile navigation toggle - FIXED
+
+<script>
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('nav-toggle');
+  const btn = document.getElementById('navToggle');
   const nav = document.getElementById('primary-nav');
   const backdrop = document.getElementById('nav-backdrop');
 
-  // Ensure elements exist before adding listeners
-  if (!btn || !nav || !backdrop) {
-    console.error('Navigation elements not found');
-    return;
-  }
-
-  function closeMenu() {
+  function closeMenu(){
     nav.classList.remove('open');
     btn.classList.remove('active');
-    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-expanded','false');
     document.body.classList.remove('nav-open');
     backdrop.classList.remove('show');
   }
 
-  function openMenu() {
-    nav.classList.add('open');
-    btn.classList.add('active');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('nav-open');
-    backdrop.classList.add('show');
-  }
-
-  // Toggle menu on button click
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const isOpen = nav.classList.contains('open');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('nav-open', open);
+    backdrop.classList.toggle('show', open);
   });
 
-  // Close menu when backdrop is clicked
   backdrop.addEventListener('click', closeMenu);
-
-  // Close menu when nav links are clicked
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close menu on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.classList.contains('open')) {
-      closeMenu();
-    }
-  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 });
-  </script>
-
+</script>
 </body>
 </html>

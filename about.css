@@ -556,3 +556,73 @@
       .cta-button{padding:16px 32px;font-size:1rem;}
     }
   
+
+    .feature-icon {
+  font-size: 3rem;
+  margin-bottom: 24px;
+  display: block;
+  background: linear-gradient(135deg, var(--primary-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* Add these properties for proper image container */
+  height: 180px;
+  width: 200px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.feature-icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* This ensures proper scaling */
+  display: block;
+  margin: 0;
+  border-radius: 8px;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  .feature-icon {
+    height: 60px;
+    width: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card {
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-icon {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 16px;
+  }
+  
+  .feature-card {
+    padding: 25px 15px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .feature-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

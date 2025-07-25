@@ -398,3 +398,226 @@ a:focus,button:focus{outline:2px solid var(--primary-green);outline-offset:2px;}
     display: flex; /* Use flex to show it */
   }
 }
+
+/* Footer Layout Fix */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px 30px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.company-info {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Social Icons - Properly Centered */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto 40px auto;
+    width: 100%;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Services Section - Centered */
+.services-section {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-title {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: fit-content;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+}
+
+/* Quick Links - Centered */
+.quick-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quick-links-title {
+    text-align: center;
+    width: 100%;
+}
+
+/* Mobile Footer - Remove desktop grid layout */
+@media (max-width: 768px) {
+  footer {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2C3E50 100%);
+    color: var(--white);
+    padding: 40px 20px 30px;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  /* Company info */
+  .company-info {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .company-info h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .company-info .company-name-en {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .company-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    opacity: 0.85;
+  }
+
+  /* Social Icons - Mobile centered */
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0 40px 0;
+    width: 100%;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  /* Services section - Mobile */
+  .footer-section {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .quick-links .footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .quick-links h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  footer {
+    padding: 30px 15px 25px;
+  }
+
+  .footer-social {
+    gap: 15px;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-link svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.line-link {
+  color: #00C300 !important;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.line-link:hover {
+  color: #00B300 !important;
+  text-decoration: underline;
+}
